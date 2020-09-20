@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model ReleaseRetention.Controllers.RetainedReleases
+
+<div class="text-left">
+    <form asp-controller="Home" asp-action="Index" method="post">
+        Retention number: <input type="number" asp-for="Limit" min="0" />
+        <button type="submit">Retain</button>
+    </form>
+
+    <br/>
+
+    <div style="text-align: left">
+        <h3>Retained Releases</h3>
+
+        @foreach (var result in Model.ProjectReleases)
+        {
+            <div>
+                <div>Project: @result.ProjectName</div>
+                <div>Environment: @result.EnvironmentName</div>
+                <ul>
+                    @foreach (var release in result.Releases)
+                    {
+                        <li>@release.ReleaseId (last deployed at @release.DeployedAt.ToShortDateString()</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>
