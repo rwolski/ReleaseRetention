@@ -22,7 +22,7 @@
                 <ul>
                     @foreach (var release in result.Releases)
                     {
-                        <li>@release.ReleaseId (last deployed at @release.DeployedAt.ToShortDateString()</li>
+                        <li>@release.ReleaseId (last deployed at @release.DeployedAt.ToString())</li>
                     }
                 </ul>
             </div>

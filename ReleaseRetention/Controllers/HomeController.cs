@@ -25,12 +25,6 @@ namespace ReleaseRetention.Controllers
             return View(model);
         }
 
-        //[HttpGet("releases")]
-        //public IActionResult GetReleases(int? limit)
-        //{            
-        //    return View("Index", );
-        //}
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
